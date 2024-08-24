@@ -8,10 +8,8 @@ class Solution(object):
                 break
             
         if break_point == -1:
-            nums = nums[::-1]
             nums.reverse()
-            print(break_point)
-              
+            print(break_point)     
         else:
             for i in range(len(nums)-1, break_point, -1):
                 if nums[i] > nums[break_point]:
@@ -19,14 +17,11 @@ class Solution(object):
                     break
 
             nums[second_greatest], nums[break_point] = nums[break_point], nums[second_greatest]
-
             nums[break_point+1:] = sorted(nums[break_point+1:])
             print(nums)
             print(break_point)
 
-
-
 solution = Solution()
-nums = [4,3,2,1]
+nums = [4,1,3,2]
 solution.nextPermutation(nums)
 
